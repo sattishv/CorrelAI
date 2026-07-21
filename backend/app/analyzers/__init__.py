@@ -4,7 +4,7 @@ CorrelAI
 
 Analyzers Package
 
-Exports normalization, extraction, correlation, and dependency graph components.
+Exports normalization, extraction, correlation, dependency graph, and replay diagnostics components.
 
 ------------------------------------------------------------------------------
 """
@@ -35,6 +35,20 @@ from app.analyzers.extraction_result import ExtractionResult
 from app.analyzers.graph_rules import GraphMatchMode, GraphRule, GraphRuleSet
 from app.analyzers.normalization_pipeline import NormalizationPipeline
 from app.analyzers.normalization_result import NormalizationResult
+from app.analyzers.replay_diagnostics_engine import ReplayDiagnosticsEngine
+from app.analyzers.replay_diagnostics_result import (
+    ReplayDiagnosticsResult,
+    ReplayIssue,
+    ReplayIssueKind,
+    ReplaySeverity,
+    ReplayStatus,
+    ReplayStepDiagnostics,
+)
+from app.analyzers.replay_diagnostics_rules import (
+    ReplayMatchMode,
+    ReplayRule,
+    ReplayRuleSet,
+)
 from app.analyzers.value_classifier import (
     ValueCategory,
     ValueClassification,
@@ -70,6 +84,16 @@ __all__ = [
     "GraphRuleSet",
     "NormalizationPipeline",
     "NormalizationResult",
+    "ReplayDiagnosticsEngine",
+    "ReplayDiagnosticsResult",
+    "ReplayIssue",
+    "ReplayIssueKind",
+    "ReplaySeverity",
+    "ReplayStatus",
+    "ReplayStepDiagnostics",
+    "ReplayMatchMode",
+    "ReplayRule",
+    "ReplayRuleSet",
     "ValueCategory",
     "ValueClassification",
     "ValueClassifier",
